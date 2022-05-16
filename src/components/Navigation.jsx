@@ -1,12 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { handleClick } from '../utilities/functions/goTop'
 
 const Navigation = () => {
-  const handleClick = () => {
-    // when the user click the link, the page will scroll to the top
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
   return (
     <nav className='nav'>
       <ul className='nav-list'>

@@ -1,10 +1,10 @@
+import { Cake, Envelope, House, Info } from 'phosphor-react'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import logo from '../public/logo.png'
 import { handleClick } from '../utilities/functions/goTop'
 import Logo from './Logo'
 import Navigation from './Navigation'
-import { AboutSVG, BreadSVG, ContactSVG, HomeSVG } from './SVG'
 
 const Header = () => {
   return (
@@ -22,22 +22,22 @@ const HeaderMobile = () => {
         <ul className='nav-list'>
           <li className='nav-item'>
             <NavLink to='/' onClick={handleClick}>
-              <HomeSVG />
+              <House size={32} weight='bold' />
             </NavLink>
           </li>
           <li className='nav-item'>
             <NavLink to='/breads' onClick={handleClick}>
-              <BreadSVG />
+              <Cake size={32} weight='bold' />
             </NavLink>
           </li>
           <li className='nav-item'>
             <NavLink to='/about' onClick={handleClick}>
-              <AboutSVG />
+              <Info size={32} weight='bold' />
             </NavLink>
           </li>
           <li className='nav-item'>
             <NavLink to='/contact' onClick={handleClick}>
-              <ContactSVG />
+              <Envelope size={32} weight='bold' />
             </NavLink>
           </li>
         </ul>

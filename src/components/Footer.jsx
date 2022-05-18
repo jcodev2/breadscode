@@ -15,14 +15,8 @@ const Footer = () => {
           </p>
         </div>
         <div className='footer-content-right'>
-          <h3>Contact Us</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-            euismod, ipsum ut dignissim consectetur, eros augue condimentum
-            nisl, eget porta nisl ipsum eget nunc. Curabitur euismod, ipsum ut
-            dignissim consectetur, eros augue condimentum nisl, eget porta nisl
-            ipsum eget nunc.
-          </p>
+          <h3>Follow Us</h3>
+          <div className='icons'></div>
         </div>
       </div>
       <div className='footer-copyright'>

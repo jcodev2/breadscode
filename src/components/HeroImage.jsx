@@ -1,13 +1,9 @@
 import React from 'react'
-import logo from '../public/logo.png'
-import Logo from './Logo'
 
-const HeroImage = () => {
+const HeroImage = ({ image, children }) => {
   return (
-    <div className='hero-image'>
-      <div className='hero-image-content'>
-        <Logo logo={logo} />
-      </div>
+    <div className='hero-image' style={{ backgroundImage: `url(${image})` }}>
+      {children}
     </div>
   )
 }

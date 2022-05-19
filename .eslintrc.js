@@ -15,6 +15,7 @@ module.exports = {
   plugins: ['react'],
   rules: {
     'react/prop-types': 0,
-    'space-before-function-paren': 0
+    'space-before-function-paren': 0,
+    'react/no-unescaped-entities': 0
   }
 }

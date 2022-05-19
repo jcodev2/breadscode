@@ -24,7 +24,7 @@
   --gray-color: #f0f0f0;
   --gray-dark-color: #2f2f2f;
   --black-color: #000000;
-  --link-color: #ff5d73;
+  --link-color: #ffcb74;
   --text-color: #2f2f2f;
   --title-color: #111111;
 }
@@ -48,6 +48,7 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* ? Body */
@@ -112,6 +113,10 @@ img,
 video {
   max-width: 100%;
   height: auto;
+}
+figure {
+  margin: 0;
+  padding: 0;
 }
 
 /* ? Link */
@@ -194,10 +199,104 @@ p {
   line-height: 1.5;
   color: var(--first-color);
 }
-
 @media screen and (min-width: 48em) {
   .bakery-cards {
     justify-content: space-between;
+  }
+}
+
+/* ? Breads Card */
+.length-breads {
+  font-size: var(--step-2);
+  font-weight: 500;
+}
+.breads {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.breads-card {
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #dfdfdf15;
+}
+.breads-card-figure {
+  width: 100%;
+  height: 300px;
+  background-color: #f8f8f8;
+}
+.breads-card-figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.breads-card-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  gap: 0.5rem;
+}
+.breads-card-content h3 {
+  font-size: var(--step-2);
+  font-weight: 700;
+  color: var(--title-color);
+}
+.breads-card-content p {
+  font-size: var(--step-1);
+  font-weight: 500;
+  color: var(--text-color);
+}
+.breads-card-content .breads-card-price {
+  font-size: var(--step-2);
+  font-weight: 700;
+  color: var(--gray-dark-color);
+  text-align: right;
+}
+.breads-card-button {
+  width: 100%;
+  height: 50px;
+  background-color: #ffcb74;
+  border-radius: 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--step-2);
+}
+.breads-card-button a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 0.5rem;
+  text-align: center;
+  color: var(--text-color);
+  font-weight: 500;
+  text-decoration: none;
+}
+@media screen and (min-width: 48em) {
+  .breads {
+    justify-content: space-between;
+  }
+  .breads-card-content h3 {
+    font-size: var(--step-1);
+  }
+  .breads-card-content p {
+    font-size: var(--step-1);
+  }
+  .breads-card-content .breads-card-price {
+    font-size: var(--step-1);
+  }
+  .breads-card-button {
+    font-size: var(--step-1);
   }
 }
 
@@ -231,7 +330,7 @@ p {
 .go-top > svg {
   width: 2.3rem;
   height: 2.3rem;
-  color: var(--first-color);
+  color: var(--text-color);
 }
 .go-top.is-visible {
   opacity: 0.9;
@@ -256,7 +355,7 @@ p {
   height: 5rem;
   margin: 0 auto;
   padding: 1rem;
-  background-color: #ffff;
+  background-color: #fffe;
   border-radius: 5rem;
 }
 .nav {
@@ -292,7 +391,7 @@ p {
   z-index: 10;
   width: 100%;
   height: 100%;
-  color: var(--title-color);
+  color: var(--gray-color);
   text-decoration: none;
   transition: color 0.2s ease-in-out;
   transition-delay: 0.2s;
@@ -308,7 +407,7 @@ p {
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: #ff5d73;
+  background-color: #ffcb74;
   border-radius: 2rem;
   transform-origin: right;
   transform: scaleX(0);
@@ -326,7 +425,7 @@ p {
   transition: color 0.4s ease-in-out;
 }
 .nav-item a.active svg {
-  color: var(--first-color);
+  color: var(--title-color);
 }
 /* ? Header Desktop */
 @media screen and (min-width: 62em) {
@@ -382,10 +481,16 @@ p {
     font-weight: 700;
     color: var(--first-color);
   }
+  .nav-item a::before {
+    background-color: #ff5d73;
+  }
   .header-desktop.is-transparent {
     background-color: transparent;
   }
   .header-desktop.is-transparent .nav-item a {
+    color: var(--first-color);
+  }
+  .header-desktop.is-transparent .nav-item a.active {
     color: var(--first-color);
   }
   .header-desktop.is-transparent .header-logo span {
@@ -435,7 +540,6 @@ p {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-
 .hero-image-content {
   position: absolute;
   top: 50%;

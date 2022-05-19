@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 const BakeryCard = ({ address, name, image }) => {
   return (
     <article className='bakery-card'>
       <img src={image} alt={name} />
-      <div className='bakery-card-info'>
+      <footer className='bakery-card-info'>
         <h3>{name}</h3>
         <p>{address}</p>
-      </div>
+      </footer>
     </article>
   )
 }
 
-export default BakeryCard
+export default memo(BakeryCard)

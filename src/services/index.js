@@ -7,7 +7,7 @@ const getBakeries = async () => {
 }
 
 const getBreads = async () => {
-  const { data: breads, error } = await supabase.from('breads').select('*')
+  const { data: breads, error } = await supabase.from('breadscode').select('*')
 
   return [breads, error]
 }

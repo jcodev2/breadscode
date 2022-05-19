@@ -6,4 +6,10 @@ const getBakeries = async () => {
   return [bakeries, error]
 }
 
-export { getBakeries }
+const getBreads = async () => {
+  const { data: breads, error } = await supabase.from('breads').select('*')
+
+  return [breads, error]
+}
+
+export { getBakeries, getBreads }

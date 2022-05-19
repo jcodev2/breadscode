@@ -11,8 +11,6 @@ const useBreads = () => {
       const [breads] = await getBreads()
       setBreads(breads)
       setIsLoading(false)
-
-      console.log('breads', breads)
     } catch (error) {
       setError(error)
       setIsLoading(false)

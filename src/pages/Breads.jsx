@@ -1,9 +1,12 @@
+import { ArrowDown } from 'phosphor-react'
 import React from 'react'
+import Confetti from 'react-confetti'
 import BreadsCard from '../components/BreadsCard'
 import Container from '../components/Container'
 import Error from '../components/Error'
 import GoTop from '../components/GoTop'
 import HeroImage from '../components/HeroImage'
+import Search from '../components/Search'
 import Spinner from '../components/Spinner'
 import Title from '../components/Title'
 import useBreads from '../hooks/useBreads'
@@ -14,14 +17,32 @@ const Breads = () => {
 
   return (
     <>
-      <HeroImage image={HeroImageMenu}></HeroImage>
+      <HeroImage image={HeroImageMenu}>
+        <div className='hero-image-titles'>
+          <h2 className='left-direction'>Craft</h2>
+          <h2 className='right-direction'>a Mouthwatering</h2>
+          <h2 className='left-direction'>Menu For Free</h2>
+          <ArrowDown weight='bold' />
+        </div>
+      </HeroImage>
+
       <Container>
         <section className='section'>
           <Title text='Breads' />
 
           {isLoading && <Spinner />}
 
-          <p className='length-breads'>We've found {breads.length} breads.</p>
+          <Confetti
+            width={window.innerWidth - 50}
+            height={window.innerHeight}
+            numberOfPieces={100}
+            recycle={false}
+          />
+
+          <div className='breads-search'>
+            <Search />
+            <p className='length-breads'>We've found {breads.length} breads.</p>
+          </div>
 
           <div className='breads'>
             {error ? (
@@ -40,6 +61,7 @@ const Breads = () => {
           </div>
         </section>
       </Container>
+
       <GoTop />
     </>
   )
